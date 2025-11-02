@@ -150,5 +150,68 @@ A complete summary for quick CCNA exam review — includes Administrative Distan
 | **OSPF**   | `show ip ospf neighbor`<br>`show ip ospf database`<br>`debug ip ospf adj`      | Verify neighbor states and LSDB         |
 | **BGP**    | `show ip bgp summary`<br>`show ip bgp neighbors`<br>`debug ip bgp updates`     | Verify session state, advertised routes |
 
+
+
+
+## 🔹 12. Loop Prevention & Path Selection
+
+| Protocol | Mechanism | Explanation |
+|-----------|------------|-------------|
+| **RIP** | Max hop = 15 | Prevents loops by hop limit |
+| **EIGRP** | Split Horizon, DUAL | Prevents loops using Feasible Distance (FD) & Reported Distance (RD) |
+| **OSPF** | LSA flooding control | Each router builds unique LSDB; SPF avoids loops |
+| **BGP** | AS_PATH attribute | Detects loops by checking AS numbers in path |
 ### ✅ Author Notes
 This cheat sheet is designed for **CCNA 200-301 and CCNP ENCOR prep** — covers all routing protocols, algorithms, timers, and metrics in concise exam-ready form.
+
+
+
+## 🔹 13. Route Summarization & Stub Areas
+
+- **Passive interface:** Stops sending routing updates on a specific interface.  
+- **Route Summarization:**
+  - RIP / EIGRP → Manual & Auto-summarization (default auto ON in older IOS)
+  - OSPF → Manual only (area range / summary-address)
+- **Stub Areas in OSPF:**
+  - Stub
+  - Totally Stubby
+  - NSSA (Not-So-Stubby Area)
+- **BGP AS Numbers:**
+  - Private: **64512–65535**
+  - Public: **1–64511**
+ 
+
+## 🔹 14. Default Values to Memorize (Exam Quick Recap)
+
+| Parameter | Default Value |
+|------------|----------------|
+| RIP update interval | 30 sec |
+| RIP invalid timer | 180 sec |
+| OSPF hello (broadcast) | 10 sec |
+| OSPF dead (broadcast) | 40 sec |
+| EIGRP hello (LAN) | 5 sec |
+| EIGRP hold (LAN) | 15 sec |
+| BGP keepalive | 60 sec |
+| BGP hold | 180 sec |
+| OSPF reference bandwidth | 100 Mbps |
+| EIGRP K-values | K1=1, K3=1, K2=K4=K5=0 |
+| Max EIGRP hops | 100 (Default) |
+| RIP max hops | 15 |
+| OSPF process ID range | 1–65535 |
+| BGP AS number range | 1–65535 |
+
+
+
+
+
+## 🔹 15. Key Show/Debug Commands (All-in-One Table)
+
+| Purpose | Command |
+|----------|----------|
+| Show routing protocols summary | `show ip protocols` |
+| Show all routing entries | `show ip route` |
+| Show interface status and cost | `show ip interface brief`, `show ip ospf interface` |
+| Show timers | `show ip ospf interface`, `show ip eigrp interface` |
+| Debug routing updates | `debug ip rip`, `debug ip eigrp packets`, `debug ip ospf events`, `debug ip bgp updates` |
+| Reset neighbor relationships | `clear ip ospf process`, `clear ip bgp *` |
+
