@@ -143,5 +143,12 @@ A complete summary for quick CCNA exam review — includes Administrative Distan
 
 ---
 
+| Protocol   | Common Commands                                                                | Purpose                                 |
+| ---------- | ------------------------------------------------------------------------------ | --------------------------------------- |
+| **RIP v2** | `show ip protocols`<br>`debug ip rip`<br>`show ip route rip`                   | Verify timers, updates, routing entries |
+| **EIGRP**  | `show ip eigrp neighbors`<br>`show ip eigrp topology`<br>`debug eigrp packets` | Check neighbor adjacency, DUAL activity |
+| **OSPF**   | `show ip ospf neighbor`<br>`show ip ospf database`<br>`debug ip ospf adj`      | Verify neighbor states and LSDB         |
+| **BGP**    | `show ip bgp summary`<br>`show ip bgp neighbors`<br>`debug ip bgp updates`     | Verify session state, advertised routes |
+
 ### ✅ Author Notes
 This cheat sheet is designed for **CCNA 200-301 and CCNP ENCOR prep** — covers all routing protocols, algorithms, timers, and metrics in concise exam-ready form.
